@@ -22,6 +22,7 @@ function addInfo() {
         // push object into array
         input.push( addEmployee );
         // display inputs
+        $('.employeeInput').val('');
         showEmployeeInfo();
        
 
