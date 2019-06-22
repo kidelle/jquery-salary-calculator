@@ -49,12 +49,13 @@ for( let i = 0; i<input.length; i++ ) {
 
     totalAnnualSalary += Number(input[i].annualSalary);
 } // end for
-}
-monthlySalary = totalAnnaulSalary / 12;
+    monthlySalary = Math.round(totalAnnualSalary / 12);
 
-function deleteInfo(event){
-    console.log('Clicked Delete', this);
-    // 'this' is the delete button...
-    // We want to remove it's parent element, the <li>
-    $(this).parent().remove();
-}
+    $( '#background' ).html(monthlySalary);
+
+    if (monthlySalary > 20000){
+        $( '#background' ).parent().addClass( 'backgroundRed' );
+    } // end if 
+
+}// end showEmployeeInfo
+
