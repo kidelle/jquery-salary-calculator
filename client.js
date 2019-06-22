@@ -34,6 +34,9 @@ function showEmployeeInfo(){
     let el = $( '#employeeOut' );
     // empty our input element
     el.empty();
+
+    let monthlySalary = 0;
+    let totalAnnualSalary = 0;
     
     // loop through Employee info
 for( let i = 0; i<input.length; i++ ) {
@@ -43,8 +46,11 @@ for( let i = 0; i<input.length; i++ ) {
     el.append(`<li>${input[i].idNumber}</li>`);
     el.append(`<li>${input[i].title}</li>`);
     el.append(`<li>${input[i].annualSalary}</li>`);
+
+    totalAnnualSalary += Number(input[i].annualSalary);
 } // end for
 }
+monthlySalary = totalAnnaulSalary / 12;
 
 function deleteInfo(event){
     console.log('Clicked Delete', this);
