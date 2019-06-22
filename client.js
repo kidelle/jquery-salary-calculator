@@ -25,7 +25,6 @@ function addInfo() {
         $('.employeeInput').val('');
         showEmployeeInfo();
        
-
 }
 function addTaskHandler(event) {
     event.preventDefault();
@@ -39,10 +38,17 @@ function showEmployeeInfo(){
     // loop through Employee info
 for( let i = 0; i<input.length; i++ ) {
     // append each employee to the DOM
-    el.append( `<li>${input[i].firstName}</li>` );
+    el.append(`<li>${input[i].firstName}</li>` );
     el.append(`<li>${input[i].lastName}</li>`);
     el.append(`<li>${input[i].idNumber}</li>`);
     el.append(`<li>${input[i].title}</li>`);
     el.append(`<li>${input[i].annualSalary}</li>`);
 } // end for
+}
+
+function deleteInfo(event){
+    console.log('Clicked Delete', this);
+    // 'this' is the delete button...
+    // We want to remove it's parent element, the <li>
+    $(this).parent().remove();
 }
